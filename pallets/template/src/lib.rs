@@ -1,6 +1,12 @@
 #![cfg_attr(not(feature = "std"), no_std)]
 
+<<<<<<< HEAD
 // Re-export pallet items so that they can be accessed from the crate namespace.
+=======
+/// Edit this file to define custom logic or remove it if it is not needed.
+/// Learn more about FRAME and the core library of Substrate FRAME pallets:
+/// <https://docs.substrate.io/v3/runtime/frame>
+>>>>>>> master
 pub use pallet::*;
 
 #[frame_support::pallet]
@@ -15,7 +21,25 @@ pub mod pallet {
 		type Event: From<Event<Self>> + IsType<<Self as frame_system::Config>::Event>;
 	}
 
+<<<<<<< HEAD
 	#[pallet::event]   // <-- Step 3. code block will replace this.
+=======
+	#[pallet::pallet]
+	#[pallet::generate_store(pub(super) trait Store)]
+	pub struct Pallet<T>(_);
+
+	// The pallet's runtime storage items.
+	// https://docs.substrate.io/v3/runtime/storage
+	#[pallet::storage]
+	#[pallet::getter(fn something)]
+	// Learn more about declaring storage items:
+	// https://docs.substrate.io/v3/runtime/storage#declaring-storage-items
+	pub type Something<T> = StorageValue<_, u32>;
+
+	// Pallets use events to inform users when important changes are made.
+	// https://docs.substrate.io/v3/runtime/events-and-errors
+	#[pallet::event]
+>>>>>>> master
 	#[pallet::generate_deposit(pub(super) fn deposit_event)]
 	pub enum Event<T: Config> {
 		/// Event emitted when a proof has been claimed. [who, claim]
