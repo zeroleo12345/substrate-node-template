@@ -8,7 +8,6 @@ pub use pallet::*;
 pub mod pallet {
 	use frame_support::{pallet_prelude::*, storage::bounded_vec::BoundedVec};
 	use frame_system::pallet_prelude::*;
-	use sp_std::vec::Vec; // Step 3.1 will include this in `Cargo.toml`
 
 	// Define the pallet struct placeholder, various pallet function are implemented on it.
 	#[pallet::pallet]
